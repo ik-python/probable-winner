@@ -1,0 +1,27 @@
+name: release
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  DEFAULT_BUMP: patch
+  INITIAL_VERSION: 0.1.0
+
+jobs:
+  artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Print info
+        run: |
+          git rev-parse --short HEAD
+          echo ${{ github.event.pull_request.base.sha }}
+          git diff --name-only ${{ github.event.pull_request.base.sha }}...
+          GIT_CHANGES=$(git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative ${{ github.event.pull_request.base.sha }}...)
+          echo "$GIT_CHANGES"
