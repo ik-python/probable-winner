@@ -44,7 +44,7 @@ trim_trailing_whitespace = true
 [COMMIT_EDITMSG]
 indent_size              = 4
 indent_style             = space
-max_line_length          = 80
+max_line_length          = 100
 
 [*.patch]
 trim_trailing_whitespace = false
@@ -70,6 +70,11 @@ indent_size = 8
 [*.py]
 indent_style = space
 indent_size = 4
+
+# 4 space indentation
+[*.toml]
+indent_style = space
+indent_size = 2
 
 # Tab indentation (no size specified)
 [Makefile]

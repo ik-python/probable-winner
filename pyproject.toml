@@ -1,3 +1,17 @@
-[tool.autopep8]
-max_line_length = 120
-ignore = "E501,W6"  # or ["E501", "W6"]
+[tool.black]
+line-length = 100
+indent = 2
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
