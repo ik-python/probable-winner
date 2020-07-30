@@ -3,25 +3,33 @@
 import os
 import csv
 
-from .models.numbers import Numbers
+from .domain.euro_millions.numbers import Numbers
 
 
 def printer(txt):
     print(txt)
 
 
+# TODO: utils not necessary should know about Numbers
 def read_csv(file, depth=1):
-    count = 0
     result = []
     with open(f"{os.getcwd()}/{file}", "r") as f:
         reader = csv.DictReader(f)
         for row in reader:
+            balls = [row["Ball 1"], row["Ball 2"], row["Ball 3"], row["Ball 4"], row["Ball 5"]]
+            stars = [row["Lucky Star 1"], row["Lucky Star 2"]]
+
             result.append(
                 Numbers.factory(
-                    {"date": row["DrawDate"], "balls": row["Ball 1"], "draw": row["DrawNumber"],}
+                    {
+                        "date": row["DrawDate"],
+                        "balls": balls,
+                        "draw": row["DrawNumber"],
+                        "stars": stars,
+                    }
                 )
             )
-            count += 1
-            if count >= depth:
+            depth -= 1
+            if depth <= 0:
                 break
     return result

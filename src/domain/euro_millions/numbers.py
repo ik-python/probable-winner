@@ -12,4 +12,4 @@ class Numbers:
         return Numbers(dct)
 
     def __repr__(self):
-        return f"date: {self.date}, draw: {self.draw}, balls: {self.balls}, stars: {self.stars}"
+        return f"date: {self.date}, draw: {self.draw}, numbers: {self.numbers}, stars: {self.stars}"
