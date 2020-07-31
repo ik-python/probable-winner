@@ -3,6 +3,8 @@
 
 import logging
 
+from src.domain.euro_millions.rules import Rules
+
 # import argparse
 
 from src import utils
@@ -19,8 +21,8 @@ if __name__ == "__main__":
     numbers = utils.read_csv(file=history_file, depth=5)
     for n in numbers:
         logging.info(n)
-    numbers_balls = list(range(1, 49))
-    numbers_stars = list(range(1, 12))
 
-    print(numbers_balls)
-    print(numbers_stars)
+    rules = Rules()
+
+    print(rules.numbers)
+    print(rules.stars)

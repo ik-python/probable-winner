@@ -16,6 +16,7 @@ def read_csv(file, depth=1):
     with open(f"{os.getcwd()}/{file}", "r") as f:
         reader = csv.DictReader(f)
         for row in reader:
+            # This should model specific
             balls = [row["Ball 1"], row["Ball 2"], row["Ball 3"], row["Ball 4"], row["Ball 5"]]
             stars = [row["Lucky Star 1"], row["Lucky Star 2"]]
 
