@@ -3,7 +3,8 @@
 
 import logging
 
-from src.domain.euro_millions.rules import Rules
+from src.domain.euromillions.rules import Rules
+from src.domain.euromillions.compute import Compute
 
 # import argparse
 
@@ -23,6 +24,6 @@ if __name__ == "__main__":
         logging.info(n)
 
     rules = Rules()
+    cmp = Compute(rules, numbers)
 
-    print(rules.numbers)
-    print(rules.stars)
+    cmp.compute()
