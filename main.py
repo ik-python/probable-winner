@@ -14,7 +14,7 @@ FORMAT = "%(asctime)s %(name)s %(levelname)s - %(message)s"
 logging.basicConfig(format=FORMAT, level=logging.INFO)
 logging.getLogger("winner").setLevel(logging.INFO)
 
-history_file = "assets/history/euromillions-draw.csv"
+history_file = "assets/history/euromillions-1354.csv"
 
 
 if __name__ == "__main__":

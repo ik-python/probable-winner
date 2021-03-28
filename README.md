@@ -21,3 +21,9 @@ $ pipenv install <package>
 ## Automation
 
 - [Github Autopep8 Action](https://github.com/peter-evans/autopep8)
+
+## TODO
+
+- [ ] Calculate percentage per every lucky star
+- [ ] Calculate probability for lucky star in pair
+- [ ] Remove numbers from jackpot e.g. 23,844,506 23,38,84,44,45,50,06

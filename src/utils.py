@@ -3,7 +3,7 @@
 import os
 import csv
 
-from .domain.euro_millions.numbers import Numbers
+from .domain.euromillions.numbers import Numbers
 
 
 def printer(txt):

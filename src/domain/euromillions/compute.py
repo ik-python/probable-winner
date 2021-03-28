@@ -2,6 +2,21 @@
 
 import random
 
+default_stars = {
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2,
+    "6": 2,
+    "7": 2,
+    "8": 2,
+    "9": 2,
+    "10": 2,
+    "11": 2,
+    "12": 2,
+}
+
 # different strategies
 # 1. Brute Force
 # - remove all values that use to be there
@@ -16,19 +31,36 @@ class Compute:
 
     def compute(self):
         numbers = set()
-        stars = set()
+
         for e in self.numbers:
             for n in e.numbers:
                 numbers.add(n)
             for s in e.stars:
-                stars.add(s)
+                if s in default_stars:
+                    if default_stars.get(s) > 1:
+                        default_stars[s] -= 1
+                    else:
+                        del default_stars[s]
 
         numberDiff = self.diff(self.rules.numbers, numbers)
         sampling = random.sample(numberDiff, k=5)
         sampling.sort()
-        print(sampling)
-        print(self.diff(numberDiff, sampling))
+        vals = self.diff(numberDiff, sampling)
+        result = filter(lambda x: x >= 5, vals)
+        result = filter(lambda x: x <= 46, result)
+        print(list(result))
+        self.calc_stars(default_stars)
         # todo: remove values sampled
+
+    def calc_stars(self, values):
+        result = list()
+        for k, v in values.items():
+            if v is 1:
+                result.append(k)
+            if v is 2:
+                result.append(k)
+                # result.append(k)
+        print(result)
 
     # https://stackoverflow.com/questions/6486450/python-compute-list-difference
     def diff(self, l1, l2):
