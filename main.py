@@ -14,12 +14,12 @@ FORMAT = "%(asctime)s %(name)s %(levelname)s - %(message)s"
 logging.basicConfig(format=FORMAT, level=logging.INFO)
 logging.getLogger("winner").setLevel(logging.INFO)
 
-history_file = "assets/history/eu-1525.csv"
+history_file = "assets/history/eu-1529.csv"
 
 
 if __name__ == "__main__":
     logging.info("lets check for a winner")
-    numbers = utils.read_csv(file=history_file, depth=7)
+    numbers = utils.read_csv(file=history_file, depth=9)
     for n in numbers:
         logging.info(n)
 
