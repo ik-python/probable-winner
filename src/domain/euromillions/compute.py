@@ -46,11 +46,12 @@ class Compute:
         sampling = random.sample(numberDiff, k=5)
         sampling.sort()
         vals = self.diff(numberDiff, sampling)
-        result = filter(lambda x: x >= 5, vals)
-        result = filter(lambda x: x <= 46, result)
-        print(list(result))
+        result = filter(lambda x: x > 4, vals)
+        result = filter(lambda x: x < 47, result)
+        result = list(result)
+        result.sort()
+        print(result)
         self.calc_stars(default_stars)
-        # todo: remove values sampled
 
     def calc_stars(self, values):
         result = list()
