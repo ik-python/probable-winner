@@ -10,11 +10,11 @@ from src.domain.euromillions.compute import Compute
 
 from src import utils
 
-FORMAT = "%(asctime)s %(name)s %(levelname)s - %(message)s"
-logging.basicConfig(format=FORMAT, level=logging.INFO)
+FORMAT = "%(asctime)s %(levelname)s - %(message)s"
+logging.basicConfig(format=FORMAT, level=logging.INFO, datefmt="%d-%b-%y %H:%M",)
 logging.getLogger("winner").setLevel(logging.INFO)
 
-history_file = "assets/history/eu-1565.csv"
+history_file = "assets/history/eu-1575.csv"
 
 
 if __name__ == "__main__":

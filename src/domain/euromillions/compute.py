@@ -59,7 +59,6 @@ class Compute:
                 result.append(k)
             if v is 2:
                 result.append(k)
-                # result.append(k)
         print(result)
 
     # https://stackoverflow.com/questions/6486450/python-compute-list-difference
