@@ -55,9 +55,9 @@ class Compute:
     def calc_stars(self, values):
         result = list()
         for k, v in values.items():
-            if v is 1:
+            if v == 1:
                 result.append(k)
-            if v is 2:
+            if v == 2:
                 result.append(k)
         print(result)
 
