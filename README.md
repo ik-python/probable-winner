@@ -29,4 +29,5 @@ $ pipenv install <package>
 - [ ] Remove numbers from jackpot e.g. 23,844,506 23,38,84,44,45,50,06
 - [ ] Sort Values
 - [ ] Tue/Fri option to chose
-- [ ] CLI to support pick draw number instead of hardcoding
+- [X] CLI to support pick draw number instead of hardcoding
+- [X] Identify day of a week
