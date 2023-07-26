@@ -14,7 +14,7 @@ FORMAT = "%(asctime)s %(levelname)s - %(message)s"
 logging.basicConfig(format=FORMAT, level=logging.INFO, datefmt="%d-%b-%y %H:%M",)
 logging.getLogger("winner").setLevel(logging.INFO)
 
-history_file = "assets/history/eu-1627.csv"
+history_file = "assets/history/eu-1653.csv"
 
 
 if __name__ == "__main__":
