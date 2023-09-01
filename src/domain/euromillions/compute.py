@@ -32,8 +32,6 @@ class Compute:
     def compute(self):
         numbers = set()
 
-        print(self.numbers)
-
         for e in self.numbers:
             for n in e.numbers:
                 numbers.add(n)

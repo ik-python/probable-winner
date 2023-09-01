@@ -11,7 +11,7 @@ def printer(txt):
 
 
 # TODO: utils not necessary should know about Numbers
-def read_csv(file, depth=1):
+def read_csv(file, day, depth=1):
     result = []
     with open(f"{os.getcwd()}/{file}", "r") as f:
         reader = csv.DictReader(f)
@@ -26,8 +26,7 @@ def read_csv(file, depth=1):
             ]
             stars = [row["Lucky Star 1"], row["Lucky Star 2"]]
 
-            result.append(
-                Numbers.factory(
+            number = Numbers.factory(
                     {
                         "date": row["DrawDate"],
                         "balls": balls,
@@ -35,8 +34,11 @@ def read_csv(file, depth=1):
                         "stars": stars,
                     }
                 )
-            )
-            depth -= 1
+            if number.day_of_week == day:
+                result.append(number)
+                print(number)
+                depth -= 1
+
             if depth <= 0:
                 break
     return result
