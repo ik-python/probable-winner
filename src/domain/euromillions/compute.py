@@ -46,7 +46,7 @@ class Compute:
         sampling = random.sample(numberDiff, k=5)
         sampling.sort()
         vals = self.diff(numberDiff, sampling)
-        result = filter(lambda x: x > 4 and x < 47, vals)
+        result = filter(lambda x: x > 1 and x < 50, vals)
         result = list(result)
         result.sort()
         print(result)
