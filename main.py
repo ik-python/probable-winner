@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Compute numbers
-## ./main.py --draw 1663
+## ./main.py --draw 1667
 
 import argparse
 import sys
