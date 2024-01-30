@@ -43,7 +43,7 @@ class Compute:
                         del default_stars[s]
 
         numberDiff = self.diff(self.rules.numbers, numbers)
-        sampling = random.sample(numberDiff, k=5)
+        sampling = random.sample(sorted(numberDiff), k=5)
         sampling.sort()
         vals = self.diff(numberDiff, sampling)
         result = filter(lambda x: x > 1 and x < 50, vals)

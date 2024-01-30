@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Compute numbers
-## ./main.py --draw 1667
+## ./main.py --draw 1671
+# ./main.py --draw 1706 --day 2
 
 import argparse
 import sys
@@ -24,12 +25,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CLI to helm pick number for Euro Millions", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--draw', type=str, help="Select draw history.")
     parser.add_argument('--depth', default=6, type=int, help="Choose depth, number of draws.")
-    parser.add_argument('--day', default=6, type=int, help="Choose day of a week.")
+    parser.add_argument('--day', default='friday', type=str, choices=['tuesday', 'friday'],  help="Specify a day (tuesday or friday).")
     args = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
     logging.info(f'arguments >> {args}')
 
     logging.info("lets check for a winner")
-    numbers = utils.read_csv(file=history_file.format(draw=args.draw), day='FRIDAY', depth= args.depth)
+    numbers = utils.read_csv(file=history_file.format(draw=args.draw), day=args.day.upper(), depth= args.depth)
 
     rules = Rules()
     cmp = Compute(rules, numbers)
