@@ -3,7 +3,7 @@
 
 # Compute numbers
 ## ./main.py --draw 1671
-# ./main.py --draw 1706 --day 2
+# ./main.py --draw 1706 --day tuesday
 
 import argparse
 import sys
