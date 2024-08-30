@@ -23,4 +23,4 @@ validate: ## Validate files with pre-commit hooks
 	@pre-commit run --all-files
 
 run: ## Run project
-	@./main.py
+	@./main.py --draw 1767 --day friday
